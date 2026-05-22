@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Keziah Megan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background: #121212; /* พื้นหลังสีดำโมเดิร์น */
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* การ์ดโปรไฟล์หลัก */
+        .profile-card {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 450px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ส่วนหัวรูปภาพจำลอง */
+        .avatar-container {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(145deg, #333, #000);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #ff4757; /* ตัดด้วยสีแดงกะเพราเล็กน้อยให้เด่น */
+            box-shadow: 0 0 15px rgba(255, 71, 87, 0.3);
+        }
+
+        .avatar-container i {
+            font-size: 3.5rem;
+            color: #ffffff;
+        }
+
+        /* ชื่อและชื่อเล่น */
+        .profile-name {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .profile-nickname {
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            margin-bottom: 30px;
+            font-weight: 300;
+            background: #2a2a2a;
+            display: inline-block;
+            padding: 3px 15px;
+            border-radius: 20px;
+        }
+
+        /* รายละเอียดข้อมูล */
+        .info-section {
+            text-align: left;
+            background: #252525;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: #ff4757; /* สีไอคอน */
+            font-size: 1.1rem;
+        }
+
+        .info-text p {
+            font-size: 0.85rem;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-text h3 {
+            font-size: 1.05rem;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        /* ส่วนท้าย / โซเชียลจำลอง */
+        .footer-badge {
+            font-size: 0.85rem;
+            color: #666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-badge i {
+            color: #00ff88; /* จุดเขียวสถานะออนไลน์เท่ๆ */
+            font-size: 0.6rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <div class="avatar-container">
+            <i class="fa-solid fa-user-astronaut"></i>
+        </div>
+
+        <h1 class="profile-name">เด็กหญิงเคไซยาห์ เมกาน ชินวรรธนวงศ์</h1>
+        <span class="profile-nickname">ชื่อเล่น: <b>เมกาน</b></span>
+
+        <div class="info-section">
+            
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </div>
+                <div class="info-text">
+                    <p>Birthday</p>
+                    <h3>1 สิงหาคม 2554</h3>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div class="info-text">
+                    <p>Favorite Food</p>
+                    <h3>ผัดกะเพราหมูสับ</h3>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <div class="info-text">
+                    <p>Favorite Color</p>
+                    <h3>สีดำ (Black)</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-badge">
+            <i class="fa-solid fa-circle"></i> Personal Profile Page
+        </div>
+    </div>
+
+</body>
+</html>
