@@ -3,214 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile | Keziah Megan</title>
+    <title>ประวัติส่วนตัว - เด็กหญิงเคไซยาห์ เมกาน ชินวรรธนวงศ์</title>
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Prompt for modern Thai typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#dc2626', /* Red-600 */
+                        primaryDark: '#991b1b', /* Red-800 */
+                        dark: '#111827', /* Off-Black/Rich Dark Gray */
+                        darkSecondary: '#1f2937', /* Dark Gray */
+                        accent: '#fef2f2', /* Soft Rose/Light Red for subtle backgrounds */
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Kanit', sans-serif;
-        }
-
+        /* Base styles */
         body {
-            background: #121212; /* พื้นหลังสีดำโมเดิร์น */
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            background-color: #f3f4f6;
+            font-family: 'Prompt', sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* การ์ดโปรไฟล์หลัก */
-        .profile-card {
-            background: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 24px;
-            width: 100%;
-            max-width: 450px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* ส่วนหัวรูปภาพจำลอง */
-        .avatar-container {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(145deg, #333, #000);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 3px solid #ff4757; /* ตัดด้วยสีแดงให้เด่น */
-            box-shadow: 0 0 15px rgba(255, 71, 87, 0.3);
-        }
-
-        .avatar-container i {
-            font-size: 3.5rem;
-            color: #ffffff;
-        }
-
-        /* ชื่อและชื่อเล่น */
-        .profile-name {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: #ffffff;
-        }
-
-        .profile-nickname {
-            font-size: 1.1rem;
-            color: #aaaaaa;
-            margin-bottom: 30px;
-            font-weight: 300;
-            background: #2a2a2a;
-            display: inline-block;
-            padding: 3px 15px;
-            border-radius: 20px;
-        }
-
-        /* รายละเอียดข้อมูล */
-        .info-section {
-            text-align: left;
-            background: #252525;
-            padding: 20px;
-            border-radius: 16px;
-            margin-bottom: 25px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .info-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .info-icon {
-            width: 40px;
-            height: 40px;
-            background: #1e1e1e;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 15px;
-            color: #ff4757; /* สีไอคอนสีแดงกระเพรา-สีแดงโปรด */
-            font-size: 1.1rem;
-        }
-
-        .info-text p {
-            font-size: 0.85rem;
-            color: #888888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .info-text h3 {
-            font-size: 1.05rem;
-            color: #ffffff;
-            font-weight: 400;
-            line-height: 1.4;
-        }
-
-        /* ส่วนท้าย / โซเชียลจำลอง */
-        .footer-badge {
-            font-size: 0.85rem;
-            color: #666;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer-badge i {
-            color: #00ff88; /* จุดเขียวสถานะออนไลน์เท่ๆ */
-            font-size: 0.6rem;
+        /* Print media query for A4 */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+                /* Force background colors to print */
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .print-container {
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0 auto !important;
+                padding: 15mm !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                border: none !important;
+            }
+            /* Hide print button on the printed paper */
+            .no-print {
+                display: none !important;
+            }
         }
     </style>
 </head>
-<body>
+<body class="py-10 px-4 flex justify-center items-center min-h-screen">
 
-    <div class="profile-card">
-        <div class="avatar-container">
-            <i class="fa-solid fa-user-astronaut"></i>
+    <!-- Print Button (Visible only on screen) -->
+    <div class="fixed top-4 right-4 no-print z-50">
+        <button onclick="window.print()" class="bg-dark hover:bg-black text-white font-medium py-2.5 px-5 rounded-lg shadow-xl flex items-center gap-2 transition-all border border-gray-800">
+            <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            <span class="font-semibold">พิมพ์ A4</span>
+        </button>
+    </div>
+
+    <!-- Main Card Container -->
+    <div class="print-container w-full max-w-4xl bg-white shadow-2xl rounded-2xl overflow-hidden border border-gray-200 flex flex-col justify-between">
+        
+        <div>
+            <!-- Header Section (Dark & Red Accent) -->
+            <header class="bg-dark text-white p-8 sm:p-10 relative overflow-hidden">
+                <!-- Red Graphic Accent Block -->
+                <div class="absolute top-0 right-0 w-36 h-full bg-gradient-to-l from-primary to-primaryDark opacity-90 transform skew-x-12 translate-x-12 hidden sm:block"></div>
+                <div class="absolute bottom-0 left-0 w-full h-1.5 bg-primary"></div>
+                
+                <div class="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6 relative z-10">
+                    <div class="text-center sm:text-left flex-1">
+                        <span class="text-xs font-bold tracking-widest text-primary uppercase bg-red-950 px-2.5 py-1 rounded border border-red-800">STUDENT PROFILE</span>
+                        <h1 class="text-3xl sm:text-4xl font-bold mt-3 mb-2 text-white">เด็กหญิงเคไซยาห์ เมกาน ชินวรรธนวงศ์</h1>
+                        
+                        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-4">
+                            <span class="bg-primary text-white font-bold px-4 py-1 rounded text-base shadow-md">ชื่อเล่น: เมกาน</span>
+                            <span class="text-gray-300 flex items-center gap-1.5 text-sm">
+                                <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                                โรงเรียนจอมทอง (ชั้น ม.3/2)
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Image Placeholder with Red & Black rings -->
+                    <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-primary shadow-2xl bg-darkSecondary flex items-center justify-center text-gray-400 flex-shrink-0 overflow-hidden relative group">
+                        <div class="absolute inset-0 bg-black opacity-10"></div>
+                        <svg class="text-gray-400 relative z-10" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Motto Section with elegant Left Red Border -->
+            <div class="bg-gray-50 border-l-4 border-primary px-8 py-6 my-2">
+                <div class="max-w-3xl mx-auto flex items-start gap-3">
+                    <span class="text-3xl text-primary font-serif leading-none">“</span>
+                    <p class="text-lg sm:text-xl font-medium text-gray-800 italic leading-relaxed">
+                        ไม่ต้องยืนให้สูง ไม่ต้องยืนให้เด่น ขอเเค่ยืนให้เป็น เเล้วไม่ล้มก็พอ
+                    </p>
+                    <span class="text-3xl text-primary font-serif leading-none self-end">”</span>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="p-8 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- Column 1: Personal & School -->
+                <div class="space-y-8">
+                    <!-- ข้อมูลส่วนตัว -->
+                    <section class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h2 class="text-xl font-bold border-b-2 border-dark pb-2 mb-4 flex items-center gap-2 text-gray-900">
+                            <span class="p-1.5 bg-primary text-white rounded">
+                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </span>
+                            ข้อมูลส่วนตัว
+                        </h2>
+                        <ul class="space-y-3.5 text-gray-700">
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">วันเกิด:</span> 1 สิงหาคม 2554</li>
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">เพศ:</span> หญิง</li>
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">กรุ๊ปเลือด:</span> O</li>
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">ราศี:</span> กรกฎ</li>
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">ภูมิลำเนา:</span> เชียงใหม่</li>
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">ส่วนสูง:</span> 157 ซม.</li>
+                        </ul>
+                    </section>
+
+                    <!-- การเรียนและเพื่อน -->
+                    <section class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h2 class="text-xl font-bold border-b-2 border-dark pb-2 mb-4 flex items-center gap-2 text-gray-900">
+                            <span class="p-1.5 bg-primary text-white rounded">
+                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path><path d="M8 11h8"></path><path d="M8 7h6"></path></svg>
+                            </span>
+                            ชีวิตในโรงเรียน
+                        </h2>
+                        <ul class="space-y-3.5 text-gray-700">
+                            <li class="flex items-start"><span class="w-28 font-semibold text-gray-950 flex-shrink-0">วิชาที่ชอบ:</span> <span class="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 text-sm">ภาษาอังกฤษ</span></li>
+                            <li class="flex items-start"><span class="w-28 font-semibold text-gray-950 flex-shrink-0">วิชาที่ยาก:</span> <span class="text-red-700 font-semibold bg-red-50 px-2 py-0.5 rounded border border-red-200 text-sm">วิทยาศาสตร์</span></li>
+                            <li class="flex items-start"><span class="w-28 font-semibold text-gray-950 flex-shrink-0">ชมรม/กิจกรรม:</span> Lets sing English karaoke!</li>
+                            <li class="flex items-start"><span class="w-28 font-semibold text-gray-950 flex-shrink-0">เพื่อนสนิท:</span> แก้ม, ปั้นหยา, อิมเอม, สตางค์</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- Column 2: Favorites & Skills -->
+                <div class="space-y-8">
+                    <!-- ความชอบและไลฟ์สไตล์ -->
+                    <section class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h2 class="text-xl font-bold border-b-2 border-dark pb-2 mb-4 flex items-center gap-2 text-gray-900">
+                            <span class="p-1.5 bg-primary text-white rounded">
+                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            </span>
+                            ความชอบ & ไลฟ์สไตล์
+                        </h2>
+                        <ul class="space-y-3.5 text-gray-700">
+                            <li class="flex items-center">
+                                <span class="w-28 font-semibold text-gray-950">อาชีพในฝัน:</span> 
+                                <span class="bg-primary text-white px-3 py-0.5 rounded font-bold text-sm tracking-wide shadow-sm">หมอ</span>
+                            </li>
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">อาหารโปรด:</span> ผัดกะเพราหมูสับ</li>
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">สีโปรด:</span> <span class="text-red-600 font-bold border-b-2 border-red-200">เเดง</span></li>
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">งานอดิเรก:</span> วาดรูป</li>
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">กีฬา:</span> เเบดมินตัน</li>
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">เพลงที่ชอบ:</span> เพลงสากล ความรัก</li>
+                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">ซีรีส์/อนิเมะ:</span> My story animated</li>
+                        </ul>
+                    </section>
+
+                    <!-- ทักษะความสามารถ (Skills / Pill styled) -->
+                    <section class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h2 class="text-xl font-bold border-b-2 border-dark pb-2 mb-4 flex items-center gap-2 text-gray-900">
+                            <span class="p-1.5 bg-primary text-white rounded">
+                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            </span>
+                            ทักษะความสามารถ
+                        </h2>
+                        <div class="flex flex-wrap gap-3 mt-3">
+                            <!-- Skill Pill 1 (Drawing) -->
+                            <span class="inline-flex items-center gap-2 px-4 py-2.5 bg-dark hover:bg-black text-white rounded-full text-sm font-semibold shadow transition-all duration-200 hover:-translate-y-0.5">
+                                <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                                ทักษะวาดรูป
+                            </span>
+                            <!-- Skill Pill 2 (Gaming) -->
+                            <span class="inline-flex items-center gap-2 px-4 py-2.5 bg-dark hover:bg-black text-white rounded-full text-sm font-semibold shadow transition-all duration-200 hover:-translate-y-0.5">
+                                <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><path d="M6 12h4"></path><path d="M8 10v4"></path><path d="M15 13h.01"></path><path d="M18 11h.01"></path></svg>
+                                ทักษะการเล่นเกม
+                            </span>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
-
-        <h1 class="profile-name">เด็กหญิงเคไซยาห์ เมกาน ชินวรรธนวงศ์</h1>
-        <span class="profile-nickname">ชื่อเล่น: <b>เมกาน</b></span>
-
-        <div class="info-section">
-            
-            <div class="info-item">
-                <div class="info-icon">
-                    <i class="fa-solid fa-cake-candles"></i>
-                </div>
-                <div class="info-text">
-                    <p>Birthday</p>
-                    <h3>1 สิงหาคม 2554</h3>
-                </div>
+        
+        <!-- Footer / Decorative Bottom Banner -->
+        <footer class="bg-dark text-gray-500 py-4 px-8 border-t border-gray-800 text-center text-xs flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span>© 2026 เด็กหญิงเคไซยาห์ เมกาน ชินวรรธนวงศ์ • จอมทอง ม.3/2</span>
+            <div class="flex gap-2">
+                <span class="w-3 h-3 rounded-full bg-primary"></span>
+                <span class="w-3 h-3 rounded-full bg-darkSecondary border border-gray-700"></span>
             </div>
-
-            <div class="info-item">
-                <div class="info-icon">
-                    <i class="fa-solid fa-utensils"></i>
-                </div>
-                <div class="info-text">
-                    <p>Favorite Food</p>
-                    <h3>ผัดกะเพราหมูสับ</h3>
-                </div>
-            </div>
-
-            <div class="info-item">
-                <div class="info-icon">
-                    <i class="fa-solid fa-palette"></i>
-                </div>
-                <div class="info-text">
-                    <p>Favorite Color</p>
-                    <h3>สีแดง (Red)</h3>
-                </div>
-            </div>
-
-            <div class="info-item">
-                <div class="info-icon">
-                    <i class="fa-solid fa-book-open"></i>
-                </div>
-                <div class="info-text">
-                    <p>Favorite Subject</p>
-                    <h3>วิชาภาษาอังกฤษ</h3>
-                </div>
-            </div>
-
-            <div class="info-item">
-                <div class="info-icon">
-                    <i class="fa-solid fa-user-group"></i>
-                </div>
-                <div class="info-text">
-                    <p>Best Friends</p>
-                    <h3>แก้ม, ปั้นหยา, อิมเอม, สตางค์</h3>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="footer-badge">
-            <i class="fa-solid fa-circle"></i> Personal Profile Page
-        </div>
+        </footer>
     </div>
 
 </body>
