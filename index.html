@@ -6,7 +6,7 @@
     <title>ประวัติส่วนตัว - เด็กหญิงเคไซยาห์ เมกาน ชินวรรธนวงศ์</title>
     <!-- Tailwind CSS for rapid styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Prompt for modern Thai typography -->
+    <!-- Google Fonts: Prompt for modern and friendly Thai typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -19,11 +19,12 @@
                         sans: ['Prompt', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#dc2626', /* Red-600 */
-                        primaryDark: '#991b1b', /* Red-800 */
-                        dark: '#111827', /* Off-Black/Rich Dark Gray */
-                        darkSecondary: '#1f2937', /* Dark Gray */
-                        accent: '#fef2f2', /* Soft Rose/Light Red for subtle backgrounds */
+                        primary: '#f43f5e', /* Lovely Cherry Red/Rose-500 */
+                        primaryDark: '#e11d48', /* Rose-600 */
+                        primaryDeep: '#9f1239', /* Rose-800 */
+                        accentCream: '#fffafb', /* Warm cute cream background */
+                        accentRoseLight: '#ffe4e6', /* Light Rose for subtle boxes */
+                        cuteYellow: '#fef08a', /* Bright pastel yellow for stars/highlights */
                     }
                 }
             }
@@ -31,9 +32,11 @@
     </script>
 
     <style>
-        /* Base styles */
+        /* Base styles with cute dot pattern */
         body {
-            background-color: #f3f4f6;
+            background-color: #ffe4e6; /* Cute light pink background */
+            background-image: radial-gradient(#fda4af 1.2px, transparent 1.2px);
+            background-size: 24px 24px;
             font-family: 'Prompt', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
@@ -46,9 +49,9 @@
             }
             body {
                 background-color: white;
+                background-image: none;
                 margin: 0;
                 padding: 0;
-                /* Force background colors to print */
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -56,14 +59,43 @@
                 width: 210mm;
                 min-height: 297mm;
                 margin: 0 auto !important;
-                padding: 15mm !important;
+                padding: 12mm !important;
                 box-shadow: none !important;
                 border-radius: 0 !important;
                 border: none !important;
             }
-            /* Hide print button on the printed paper */
+            /* Hide print button on A4 paper */
             .no-print {
                 display: none !important;
+            }
+        }
+
+        /* Cute animation & hover styles */
+        .cute-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .cute-card:hover {
+            transform: translateY(-4px) scale(1.01);
+        }
+        
+        .bubble-tail::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            border-width: 0 10px 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent #ffe4e6 transparent;
+            display: block;
+            width: 0;
+            z-index: 10;
+        }
+        
+        @media (min-width: 640px) {
+            .bubble-tail::after {
+                right: 70px;
+                transform: none;
             }
         }
     </style>
@@ -72,137 +104,223 @@
 
     <!-- Print Button (Visible only on screen) -->
     <div class="fixed top-4 right-4 no-print z-50">
-        <button onclick="window.print()" class="bg-dark hover:bg-black text-white font-medium py-2.5 px-5 rounded-lg shadow-xl flex items-center gap-2 transition-all border border-gray-800">
-            <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-            <span class="font-semibold">พิมพ์ A4</span>
+        <button onclick="window.print()" class="bg-primary hover:bg-primaryDark text-white font-bold py-2.5 px-6 rounded-full shadow-lg flex items-center gap-2 transition-all border-2 border-white transform hover:scale-105 active:scale-95">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            <span>พิมพ์การ์ดประวัติ (A4)</span>
         </button>
     </div>
 
     <!-- Main Card Container -->
-    <div class="print-container w-full max-w-4xl bg-white shadow-2xl rounded-2xl overflow-hidden border border-gray-200 flex flex-col justify-between">
+    <div class="print-container w-full max-w-4xl bg-white shadow-2xl rounded-3xl overflow-hidden border-4 border-rose-300 flex flex-col justify-between relative">
         
+        <!-- Top Cute Banner Border (Dotted Red Accent) -->
+        <div class="h-4 w-full bg-repeat-x bg-bottom" style="background-image: radial-gradient(circle, #f43f5e 4px, transparent 5px); background-size: 16px 16px;"></div>
+
         <div>
-            <!-- Header Section (Dark & Red Accent) -->
-            <header class="bg-dark text-white p-8 sm:p-10 relative overflow-hidden">
-                <!-- Red Graphic Accent Block -->
-                <div class="absolute top-0 right-0 w-36 h-full bg-gradient-to-l from-primary to-primaryDark opacity-90 transform skew-x-12 translate-x-12 hidden sm:block"></div>
-                <div class="absolute bottom-0 left-0 w-full h-1.5 bg-primary"></div>
+            <!-- Header Section (Bright Cute Red & Floating Doodles) -->
+            <header class="bg-gradient-to-br from-primary to-rose-600 text-white p-8 sm:p-10 relative overflow-hidden">
+                <!-- Floating decorative circles & stars in header background -->
+                <div class="absolute top-2 left-6 w-10 h-10 bg-white opacity-15 rounded-full animate-pulse"></div>
+                <div class="absolute bottom-4 left-1/3 w-6 h-6 bg-cuteYellow opacity-20 rounded-full"></div>
                 
                 <div class="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6 relative z-10">
                     <div class="text-center sm:text-left flex-1">
-                        <span class="text-xs font-bold tracking-widest text-primary uppercase bg-red-950 px-2.5 py-1 rounded border border-red-800">STUDENT PROFILE</span>
-                        <h1 class="text-3xl sm:text-4xl font-bold mt-3 mb-2 text-white">เด็กหญิงเคไซยาห์ เมกาน ชินวรรธนวงศ์</h1>
+                        <!-- Playful Header Badge -->
+                        <span class="inline-flex items-center gap-1.5 text-xs font-black tracking-widest text-primaryDeep uppercase bg-cuteYellow px-4 py-1 rounded-full border-2 border-white shadow-sm">
+                            ⭐ MY SWEET PROFILE ⭐
+                        </span>
+                        
+                        <h1 class="text-3xl sm:text-4xl font-black mt-4 mb-2 drop-shadow-md tracking-tight">
+                            เด็กหญิงเคไซยาห์ เมกาน ชินวรรธนวงศ์
+                        </h1>
                         
                         <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-4">
-                            <span class="bg-primary text-white font-bold px-4 py-1 rounded text-base shadow-md">ชื่อเล่น: เมกาน</span>
-                            <span class="text-gray-300 flex items-center gap-1.5 text-sm">
-                                <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-                                โรงเรียนจอมทอง (ชั้น ม.3/2)
+                            <span class="bg-white text-primary font-bold px-4 py-1.5 rounded-full text-base shadow-md border border-rose-200">
+                                ชื่อเล่น: น้องเมกาน 🎈
+                            </span>
+                            <span class="text-rose-50 flex items-center gap-1.5 text-sm bg-rose-700/30 px-3.5 py-1.5 rounded-full border border-rose-400/40">
+                                🏫 โรงเรียนจอมทอง (ชั้น ม.3/2)
                             </span>
                         </div>
                     </div>
                     
-                    <!-- Profile Image Placeholder with Red & Black rings -->
-                    <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-primary shadow-2xl bg-darkSecondary flex items-center justify-center text-gray-400 flex-shrink-0 overflow-hidden relative group">
-                        <div class="absolute inset-0 bg-black opacity-10"></div>
-                        <svg class="text-gray-400 relative z-10" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <!-- Cute Cartoon Braided Girl Character (Avatar SVG) -->
+                    <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-white shadow-2xl bg-accentCream flex items-center justify-center flex-shrink-0 overflow-hidden relative cute-card">
+                        <!-- Inline Cute Cartoon Braided Girl Mascot SVG -->
+                        <svg class="w-full h-full p-1" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background inside circle -->
+                            <circle cx="50" cy="50" r="46" fill="#FFF1F2"/>
+                            
+                            <!-- Sparkles / Stars in BG -->
+                            <path d="M12 40 L14 43 L10 42 Z" fill="#FACC15"/>
+                            <path d="M88 35 L90 38 L86 37 Z" fill="#FACC15"/>
+                            
+                            <!-- Left Braid (ถักเปียซ้าย) -->
+                            <g id="left-braid">
+                                <circle cx="28" cy="54" r="7" fill="#3D2B1F" stroke="#1E1B4B" stroke-width="1.5"/>
+                                <circle cx="24" cy="62" r="6" fill="#3D2B1F" stroke="#1E1B4B" stroke-width="1.5"/>
+                                <circle cx="21" cy="70" r="5" fill="#3D2B1F" stroke="#1E1B4B" stroke-width="1.5"/>
+                                <!-- Cute Red Ribbon at the end -->
+                                <path d="M 17,73 C 14,70 13,78 20,76 Z" fill="#F43F5E" stroke="#1E1B4B" stroke-width="1.5"/>
+                                <circle cx="20" cy="74" r="2.5" fill="#F43F5E"/>
+                            </g>
+                            
+                            <!-- Right Braid (ถักเปียขวา) -->
+                            <g id="right-braid">
+                                <circle cx="72" cy="54" r="7" fill="#3D2B1F" stroke="#1E1B4B" stroke-width="1.5"/>
+                                <circle cx="76" cy="62" r="6" fill="#3D2B1F" stroke="#1E1B4B" stroke-width="1.5"/>
+                                <circle cx="79" cy="70" r="5" fill="#3D2B1F" stroke="#1E1B4B" stroke-width="1.5"/>
+                                <!-- Cute Red Ribbon at the end -->
+                                <path d="M 83,73 C 86,70 87,78 80,76 Z" fill="#F43F5E" stroke="#1E1B4B" stroke-width="1.5"/>
+                                <circle cx="80" cy="74" r="2.5" fill="#F43F5E"/>
+                            </g>
+
+                            <!-- Back hair base -->
+                            <path d="M26 45 C26 22 74 22 74 45 C74 52 70 58 70 62 L30 62 C30 58 26 52 26 45 Z" fill="#3D2B1F" stroke="#1E1B4B" stroke-width="1.5"/>
+
+                            <!-- Face -->
+                            <circle cx="50" cy="49" r="22" fill="#FDBA74" stroke="#1E1B4B" stroke-width="1.5"/>
+
+                            <!-- Hair Bangs (ผมหน้าม้าถักเปีย) -->
+                            <path d="M28 42 C32 29 45 32 50 35 C55 32 68 29 72 42 C75 48 72 32 65 30 C55 27 45 27 35 30 C28 32 24 48 28 42 Z" fill="#3D2B1F" stroke="#1E1B4B" stroke-width="1.5"/>
+                            
+                            <!-- Cute Red Ribbon Bow on head -->
+                            <circle cx="34" cy="27" r="3.5" fill="#F43F5E" stroke="#1E1B4B" stroke-width="1"/>
+                            <circle cx="40" cy="27" r="3.5" fill="#F43F5E" stroke="#1E1B4B" stroke-width="1"/>
+                            <polygon points="37,27 34,31 40,31" fill="#BE123C"/>
+
+                            <!-- Eyes (Big shiny anime-style eyes) -->
+                            <circle cx="42" cy="48" r="4.5" fill="#1E1B4B"/>
+                            <circle cx="44" cy="46" r="1.5" fill="#FFFFFF"/>
+                            <circle cx="41" cy="50" r="0.8" fill="#FFFFFF"/>
+                            
+                            <circle cx="58" cy="48" r="4.5" fill="#1E1B4B"/>
+                            <circle cx="60" cy="46" r="1.5" fill="#FFFFFF"/>
+                            <circle cx="57" cy="50" r="0.8" fill="#FFFFFF"/>
+
+                            <!-- Smile and nose -->
+                            <path d="M47 53 Q50 56 53 53" stroke="#1E1B4B" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                            
+                            <!-- Blush Cheeks -->
+                            <circle cx="36" cy="54" r="3.5" fill="#F43F5E" opacity="0.7"/>
+                            <circle cx="64" cy="54" r="3.5" fill="#F43F5E" opacity="0.7"/>
+                            
+                            <!-- School Collar Uniform (ชุดนักเรียนสีแดงคอขาว) -->
+                            <path d="M33 70 C33 65 37 68 44 68 L56 68 C63 68 67 65 67 70 L62 82 L38 82 Z" fill="#F43F5E" stroke="#1E1B4B" stroke-width="1.5"/>
+                            <path d="M42 68 L50 76 L58 68 Z" fill="#FFFFFF" stroke="#1E1B4B" stroke-width="1.5"/>
+                        </svg>
                     </div>
                 </div>
             </header>
 
-            <!-- Motto Section with elegant Left Red Border -->
-            <div class="bg-gray-50 border-l-4 border-primary px-8 py-6 my-2">
-                <div class="max-w-3xl mx-auto flex items-start gap-3">
-                    <span class="text-3xl text-primary font-serif leading-none">“</span>
-                    <p class="text-lg sm:text-xl font-medium text-gray-800 italic leading-relaxed">
-                        ไม่ต้องยืนให้สูง ไม่ต้องยืนให้เด่น ขอเเค่ยืนให้เป็น เเล้วไม่ล้มก็พอ
-                    </p>
-                    <span class="text-3xl text-primary font-serif leading-none self-end">”</span>
+            <!-- Motto Section: Speech Bubble styling -->
+            <div class="px-8 pt-8 pb-4 flex justify-center">
+                <div class="cute-card bg-rose-50 border-2 border-dashed border-primary rounded-3xl p-5 max-w-2xl w-full relative bubble-tail shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl animate-bounce">📣</span>
+                        <div class="flex-1">
+                            <p class="text-xs font-black text-primaryDark uppercase tracking-widest">Motto / คติประจำใจสุดเลิฟ</p>
+                            <p class="text-base sm:text-lg font-bold text-gray-800 italic leading-relaxed">
+                                "ไม่ต้องยืนให้สูง ไม่ต้องยืนให้เด่น ขอเเค่ยืนให้เป็น เเล้วไม่ล้มก็พอ"
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Main Content Grid -->
-            <div class="p-8 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="p-8 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                <!-- Column 1: Personal & School -->
+                <!-- Column 1: Personal & School Info -->
                 <div class="space-y-8">
-                    <!-- ข้อมูลส่วนตัว -->
-                    <section class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                        <h2 class="text-xl font-bold border-b-2 border-dark pb-2 mb-4 flex items-center gap-2 text-gray-900">
-                            <span class="p-1.5 bg-primary text-white rounded">
-                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                            </span>
-                            ข้อมูลส่วนตัว
+                    <!-- ข้อมูลส่วนตัว (Cute Card with Stamped Paw Background) -->
+                    <section class="cute-card bg-white p-6 rounded-3xl border-2 border-rose-200 shadow-md relative overflow-hidden">
+                        <!-- Subtle background decoration -->
+                        <div class="absolute -bottom-4 -right-4 text-rose-100 opacity-25">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        </div>
+
+                        <h2 class="text-xl font-black border-b-2 border-rose-300 pb-2 mb-4 flex items-center gap-2 text-primaryDark">
+                            <span class="text-2xl">🧸</span>
+                            ข้อมูลส่วนตัวสุดคิ้วท์
                         </h2>
-                        <ul class="space-y-3.5 text-gray-700">
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">วันเกิด:</span> 1 สิงหาคม 2554</li>
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">เพศ:</span> หญิง</li>
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">กรุ๊ปเลือด:</span> O</li>
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">ราศี:</span> กรกฎ</li>
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">ภูมิลำเนา:</span> เชียงใหม่</li>
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">ส่วนสูง:</span> 157 ซม.</li>
+                        <ul class="space-y-3.5 text-gray-700 relative z-10 font-medium">
+                            <li class="flex items-center"><span class="w-28 font-bold text-rose-500">วันเกิด:</span> 1 สิงหาคม 2554</li>
+                            <li class="flex items-center"><span class="w-28 font-bold text-rose-500">เพศ:</span> หญิง</li>
+                            <li class="flex items-center"><span class="w-28 font-bold text-rose-500">กรุ๊ปเลือด:</span> O</li>
+                            <li class="flex items-center"><span class="w-28 font-bold text-rose-500">ราศี:</span> กรกฎ 🦀</li>
+                            <li class="flex items-center"><span class="w-28 font-bold text-rose-500">ภูมิลำเนา:</span> เชียงใหม่ ⛰️</li>
+                            <li class="flex items-center"><span class="w-28 font-bold text-rose-500">ส่วนสูง:</span> 157 ซม.</li>
                         </ul>
                     </section>
 
-                    <!-- การเรียนและเพื่อน -->
-                    <section class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                        <h2 class="text-xl font-bold border-b-2 border-dark pb-2 mb-4 flex items-center gap-2 text-gray-900">
-                            <span class="p-1.5 bg-primary text-white rounded">
-                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path><path d="M8 11h8"></path><path d="M8 7h6"></path></svg>
-                            </span>
-                            ชีวิตในโรงเรียน
+                    <!-- การเรียนและกิจกรรม (Cute Schoolbag Box) -->
+                    <section class="cute-card bg-white p-6 rounded-3xl border-2 border-rose-200 shadow-md relative overflow-hidden">
+                        <h2 class="text-xl font-black border-b-2 border-rose-300 pb-2 mb-4 flex items-center gap-2 text-primaryDark">
+                            <span class="text-2xl">🎒</span>
+                            ชีวิตในรั้วโรงเรียน
                         </h2>
-                        <ul class="space-y-3.5 text-gray-700">
-                            <li class="flex items-start"><span class="w-28 font-semibold text-gray-950 flex-shrink-0">วิชาที่ชอบ:</span> <span class="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 text-sm">ภาษาอังกฤษ</span></li>
-                            <li class="flex items-start"><span class="w-28 font-semibold text-gray-950 flex-shrink-0">วิชาที่ยาก:</span> <span class="text-red-700 font-semibold bg-red-50 px-2 py-0.5 rounded border border-red-200 text-sm">วิทยาศาสตร์</span></li>
-                            <li class="flex items-start"><span class="w-28 font-semibold text-gray-950 flex-shrink-0">ชมรม/กิจกรรม:</span> Lets sing English karaoke!</li>
-                            <li class="flex items-start"><span class="w-28 font-semibold text-gray-950 flex-shrink-0">เพื่อนสนิท:</span> แก้ม, ปั้นหยา, อิมเอม, สตางค์</li>
+                        <ul class="space-y-3.5 text-gray-700 relative z-10 font-medium">
+                            <li class="flex items-start">
+                                <span class="w-28 font-bold text-rose-500 flex-shrink-0">วิชาที่ชอบ:</span> 
+                                <span class="text-white bg-green-500 px-3 py-0.5 rounded-full text-xs font-bold shadow-sm border border-green-600">ภาษาอังกฤษ 🇬🇧</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-28 font-bold text-rose-500 flex-shrink-0">วิชาที่ยาก:</span> 
+                                <span class="text-white bg-primary px-3 py-0.5 rounded-full text-xs font-bold shadow-sm border border-rose-600">วิทยาศาสตร์ 🧪</span>
+                            </li>
+                            <li class="flex items-start"><span class="w-28 font-bold text-rose-500 flex-shrink-0">ชมรม/กิจกรรม:</span> Lets sing English karaoke! 🎤</li>
+                            <li class="flex items-start">
+                                <span class="w-28 font-bold text-rose-500 flex-shrink-0">เพื่อนสนิท:</span> 
+                                <span class="bg-rose-50 text-primaryDark px-2.5 py-1 rounded-xl border border-rose-200 text-xs font-bold">แก้ม, ปั้นหยา, อิมเอม, สตางค์ 💕</span>
+                            </li>
                         </ul>
                     </section>
                 </div>
 
                 <!-- Column 2: Favorites & Skills -->
                 <div class="space-y-8">
-                    <!-- ความชอบและไลฟ์สไตล์ -->
-                    <section class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                        <h2 class="text-xl font-bold border-b-2 border-dark pb-2 mb-4 flex items-center gap-2 text-gray-900">
-                            <span class="p-1.5 bg-primary text-white rounded">
-                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                            </span>
-                            ความชอบ & ไลฟ์สไตล์
+                    <!-- ความชอบและไลฟ์สไตล์ (Red Heart Deco Card) -->
+                    <section class="cute-card bg-white p-6 rounded-3xl border-2 border-rose-200 shadow-md relative overflow-hidden">
+                        <h2 class="text-xl font-black border-b-2 border-rose-300 pb-2 mb-4 flex items-center gap-2 text-primaryDark">
+                            <span class="text-2xl">🧁</span>
+                            ของโปรด & ไลฟ์สไตล์
                         </h2>
-                        <ul class="space-y-3.5 text-gray-700">
+                        <ul class="space-y-3.5 text-gray-700 relative z-10 font-medium">
                             <li class="flex items-center">
-                                <span class="w-28 font-semibold text-gray-950">อาชีพในฝัน:</span> 
-                                <span class="bg-primary text-white px-3 py-0.5 rounded font-bold text-sm tracking-wide shadow-sm">หมอ</span>
+                                <span class="w-28 font-bold text-rose-500">อาชีพในฝัน:</span> 
+                                <span class="bg-primary text-white px-3.5 py-1 rounded-full font-extrabold text-xs tracking-wider border border-rose-600 shadow-sm flex items-center gap-1 animate-pulse">
+                                    🩺 คุณหมอ (Doctor)
+                                </span>
                             </li>
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">อาหารโปรด:</span> ผัดกะเพราหมูสับ</li>
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">สีโปรด:</span> <span class="text-red-600 font-bold border-b-2 border-red-200">เเดง</span></li>
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">งานอดิเรก:</span> วาดรูป</li>
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">กีฬา:</span> เเบดมินตัน</li>
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">เพลงที่ชอบ:</span> เพลงสากล ความรัก</li>
-                            <li class="flex items-center"><span class="w-28 font-semibold text-gray-950">ซีรีส์/อนิเมะ:</span> My story animated</li>
+                            <li class="flex items-center"><span class="w-28 font-bold text-rose-500">อาหารโปรด:</span> ผัดกะเพราหมูสับ 🍳</li>
+                            <li class="flex items-center">
+                                <span class="w-28 font-bold text-rose-500">สีโปรด:</span> 
+                                <span class="text-white bg-primary px-3.5 py-0.5 rounded-full font-bold text-xs shadow-sm">สีแดง ❤️</span>
+                            </li>
+                            <li class="flex items-center"><span class="w-28 font-bold text-rose-500">งานอดิเรก:</span> วาดรูป 🎨</li>
+                            <li class="flex items-center"><span class="w-28 font-bold text-rose-500">กีฬา:</span> แบดมินตัน 🏸</li>
+                            <li class="flex items-center"><span class="w-28 font-bold text-rose-500">เพลงที่ชอบ:</span> เพลงสากลแนวความรัก 🎶</li>
+                            <li class="flex items-center"><span class="w-28 font-bold text-rose-500">ซีรีส์/อนิเมะ:</span> My story animated 🎬</li>
                         </ul>
                     </section>
 
-                    <!-- ทักษะความสามารถ (Skills / Pill styled) -->
-                    <section class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-                        <h2 class="text-xl font-bold border-b-2 border-dark pb-2 mb-4 flex items-center gap-2 text-gray-900">
-                            <span class="p-1.5 bg-primary text-white rounded">
-                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                            </span>
+                    <!-- ทักษะความสามารถ (Playful Capsule Tag Style) -->
+                    <section class="cute-card bg-white p-6 rounded-3xl border-2 border-rose-200 shadow-md relative overflow-hidden">
+                        <h2 class="text-xl font-black border-b-2 border-rose-300 pb-2 mb-4 flex items-center gap-2 text-primaryDark">
+                            <span class="text-2xl">✨</span>
                             ทักษะความสามารถ
                         </h2>
                         <div class="flex flex-wrap gap-3 mt-3">
-                            <!-- Skill Pill 1 (Drawing) -->
-                            <span class="inline-flex items-center gap-2 px-4 py-2.5 bg-dark hover:bg-black text-white rounded-full text-sm font-semibold shadow transition-all duration-200 hover:-translate-y-0.5">
-                                <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
-                                ทักษะวาดรูป
+                            <!-- Skill Tag 1: Drawing Art -->
+                            <span class="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-primary to-rose-400 text-white rounded-full text-sm font-black border-2 border-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                                ทักษะวาดรูป 🎨
                             </span>
-                            <!-- Skill Pill 2 (Gaming) -->
-                            <span class="inline-flex items-center gap-2 px-4 py-2.5 bg-dark hover:bg-black text-white rounded-full text-sm font-semibold shadow transition-all duration-200 hover:-translate-y-0.5">
-                                <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><path d="M6 12h4"></path><path d="M8 10v4"></path><path d="M15 13h.01"></path><path d="M18 11h.01"></path></svg>
-                                ทักษะการเล่นเกม
+                            <!-- Skill Tag 2: Gaming Champion -->
+                            <span class="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-cuteYellow to-yellow-400 text-primaryDeep rounded-full text-sm font-black border-2 border-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><path d="M6 12h4"></path><path d="M8 10v4"></path><path d="M15 13h.01"></path><path d="M18 11h.01"></path></svg>
+                                ทักษะการเล่นเกม 🎮
                             </span>
                         </div>
                     </section>
@@ -210,12 +328,13 @@
             </div>
         </div>
         
-        <!-- Footer / Decorative Bottom Banner -->
-        <footer class="bg-dark text-gray-500 py-4 px-8 border-t border-gray-800 text-center text-xs flex flex-col sm:flex-row justify-between items-center gap-2">
-            <span>© 2026 เด็กหญิงเคไซยาห์ เมกาน ชินวรรธนวงศ์ • จอมทอง ม.3/2</span>
-            <div class="flex gap-2">
-                <span class="w-3 h-3 rounded-full bg-primary"></span>
-                <span class="w-3 h-3 rounded-full bg-darkSecondary border border-gray-700"></span>
+        <!-- Footer / Decorative Wave Bottom Banner -->
+        <footer class="bg-rose-50 text-rose-500 py-4 px-8 border-t-2 border-rose-100 text-center text-xs flex flex-col sm:flex-row justify-between items-center gap-3 relative overflow-hidden">
+            <span class="relative z-10 font-bold tracking-wide text-rose-700">© 2026 เด็กหญิงเคไซยาห์ เมกาน ชินวรรธนวงศ์ • จอมทอง ม.3/2 🎀</span>
+            <div class="flex gap-1.5 relative z-10">
+                <span class="w-3.5 h-3.5 rounded-full bg-primary animate-ping"></span>
+                <span class="w-3.5 h-3.5 rounded-full bg-cuteYellow border-2 border-rose-300"></span>
+                <span class="w-3.5 h-3.5 rounded-full bg-rose-400"></span>
             </div>
         </footer>
     </div>
